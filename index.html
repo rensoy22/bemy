@@ -38,8 +38,8 @@ h1{color:#ff4d6d;}
 
 .btn-row{
  display:flex;
- justify-content:center;
- gap:20px;
+ justify-content:space-between;
+ align-items:center;
  margin-top:20px;
 }
 
@@ -81,7 +81,22 @@ function move(){
 }
 noBtn.addEventListener("mouseover",move);
 noBtn.addEventListener("touchstart",move);
+
+function placeNoInitial(){
+	const card=document.querySelector('.card');
+	if(!card) return;
+	const rect=card.getBoundingClientRect();
+	// place the No button near the right side of the card, aligned with the button row
+	const left = Math.min(window.innerWidth - noBtn.offsetWidth - 20, rect.left + rect.width - noBtn.offsetWidth - 20);
+	const top = rect.top + rect.height - 70;
+	noBtn.style.left = left + 'px';
+	noBtn.style.top = top + 'px';
+}
+
+window.addEventListener('load', placeNoInitial);
+window.addEventListener('resize', placeNoInitial);
 </script>
 
 </body>
 </html>
+
