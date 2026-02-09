@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Form ❤️</title>
+
+<style>
+body{
+ margin:0;
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ background:linear-gradient(135deg,#ff4d6d,#ff758f);
+ font-family:Arial;
+ color:white;
+}
+
+.card{
+ background:white;
+ color:black;
+ padding:30px;
+ border-radius:25px;
+ width:90%;
+ max-width:400px;
+ text-align:center;
+}
+
+input,button{
+ padding:12px;
+ margin:10px 0;
+ width:100%;
+ font-size:16px;
+ border-radius:12px;
+ border:1px solid #ddd;
+}
+
+button{
+ background:#ff4d6d;
+ color:white;
+ border:none;
+ font-size:18px;
+ cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>GOTCHUU!!! ❤️</h1>
+<p>Let's your Valentine date 😍</p>
+
+<form action="https://formspree.io/f/mjgekjde" method="POST">
+
+<input type="hidden" name="_next" value="thankyou.html">
+
+<label>Your Name</label>
+<input type="text" name="Name" required>
+
+<label>Your Ka Date?</label>
+<input type="text" name="Name" required>
+
+<label>Date</label>
+<input type="text" value="February 14 ❤️" readonly>
+<input type="hidden" name="Date" value="February 14">
+
+<label>Time</label>
+<input type="time" name="Time" required>
+
+<label>Place</label>
+<input type="text" name="Place" placeholder="Where you are going?" required>
+
+<p>Basi Pa Lang ya!!! 😍</p>
+
+<button type="submit">Send ❤️</button>
+
+</form>
+</div>
+
+</body>
+</html>
