@@ -84,11 +84,15 @@ noBtn.addEventListener("touchstart",move);
 
 function placeNoInitial(){
 	const card=document.querySelector('.card');
-	if(!card) return;
-	const rect=card.getBoundingClientRect();
-	// place the No button near the right side of the card, aligned with the button row
-	const left = Math.min(window.innerWidth - noBtn.offsetWidth - 20, rect.left + rect.width - noBtn.offsetWidth - 20);
-	const top = rect.top + rect.height - 70;
+  const yesBtn=document.getElementById('yes');
+  if(!card || !yesBtn) return;
+  const rect=card.getBoundingClientRect();
+  const yesRect = yesBtn.getBoundingClientRect();
+
+  const left = Math.min(window.innerWidth - noBtn.offsetWidth - 20, rect.left + rect.width - noBtn.offsetWidth - 20);
+
+  let top = Math.round(yesRect.top + (yesRect.height - noBtn.offsetHeight) / 2);
+  top = Math.max(8, Math.min(top, window.innerHeight - noBtn.offsetHeight - 8));
 	noBtn.style.left = left + 'px';
 	noBtn.style.top = top + 'px';
 }
